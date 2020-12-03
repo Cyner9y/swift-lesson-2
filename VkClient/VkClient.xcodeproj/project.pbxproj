@@ -13,6 +13,7 @@
 		D6281E0A257698F800781510 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6281E08257698F800781510 /* Main.storyboard */; };
 		D6281E0C257698FB00781510 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6281E0B257698FB00781510 /* Assets.xcassets */; };
 		D6281E0F257698FB00781510 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D6281E0D257698FB00781510 /* LaunchScreen.storyboard */; };
+		D6281E3C2577A80E00781510 /* unnamed.png in Resources */ = {isa = PBXBuildFile; fileRef = D6281E3B2577A80E00781510 /* unnamed.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D6281E0B257698FB00781510 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6281E0E257698FB00781510 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D6281E10257698FB00781510 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6281E3B2577A80E00781510 /* unnamed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unnamed.png; path = ../../../../Downloads/unnamed.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				D6281E06257698F800781510 /* ViewController.swift */,
 				D6281E08257698F800781510 /* Main.storyboard */,
 				D6281E0B257698FB00781510 /* Assets.xcassets */,
+				D6281E3B2577A80E00781510 /* unnamed.png */,
 				D6281E0D257698FB00781510 /* LaunchScreen.storyboard */,
 				D6281E10257698FB00781510 /* Info.plist */,
 			);
@@ -126,6 +129,7 @@
 			files = (
 				D6281E0F257698FB00781510 /* LaunchScreen.storyboard in Resources */,
 				D6281E0C257698FB00781510 /* Assets.xcassets in Resources */,
+				D6281E3C2577A80E00781510 /* unnamed.png in Resources */,
 				D6281E0A257698F800781510 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
