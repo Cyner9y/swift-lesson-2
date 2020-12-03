@@ -23,8 +23,8 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="204.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="unnamed.png" translatesAutoresizingMaskIntoConstraints="NO" id="qgi-xz-iba">
-                                                <rect key="frame" x="107" y="3" width="200" height="198"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                                <rect key="frame" x="107" y="2" width="200" height="198"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES"/>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -35,39 +35,34 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ol-D8-khj">
                                         <rect key="frame" x="0.0" y="204.5" width="414" height="204.5"/>
                                         <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riB-xT-55f">
+                                                <rect key="frame" x="107" y="68" width="200" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
+                                            </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-kp-lbf">
+                                                <rect key="frame" x="107" y="128" width="200" height="34"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
+                                            </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Введите логин и пароль для входа" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="316.5" translatesAutoresizingMaskIntoConstraints="NO" id="we9-xH-j5K">
-                                                <rect key="frame" x="49" y="23" width="316" height="24"/>
+                                                <rect key="frame" x="32" y="8" width="350" height="25"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="fkc-u2-gL2"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riB-xT-55f">
-                                                <rect key="frame" x="107" y="68" width="200" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="y0y-DL-8UA"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-kp-lbf">
-                                                <rect key="frame" x="107" y="128" width="200" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="200" id="8SB-bK-wgA"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
-                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstItem="riB-xT-55f" firstAttribute="top" secondItem="we9-xH-j5K" secondAttribute="bottom" constant="21" id="32i-RT-T4d"/>
-                                            <constraint firstAttribute="bottom" secondItem="kbp-kp-lbf" secondAttribute="bottom" constant="42.5" id="6VI-Lt-DOh"/>
-                                            <constraint firstItem="we9-xH-j5K" firstAttribute="leading" secondItem="3ol-D8-khj" secondAttribute="leading" constant="49" id="7Df-iz-QYP"/>
+                                            <constraint firstItem="we9-xH-j5K" firstAttribute="top" secondItem="3ol-D8-khj" secondAttribute="topMargin" id="Byq-FJ-4ng"/>
                                             <constraint firstAttribute="height" constant="204.5" id="Ej2-Ns-c0Y"/>
-                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="centerX" secondItem="we9-xH-j5K" secondAttribute="centerX" id="O4m-dq-Xos"/>
-                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="centerX" secondItem="3ol-D8-khj" secondAttribute="centerX" id="YYJ-go-dLt"/>
-                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="top" secondItem="riB-xT-55f" secondAttribute="bottom" constant="26" id="dIL-8N-Dss"/>
-                                            <constraint firstItem="we9-xH-j5K" firstAttribute="centerX" secondItem="riB-xT-55f" secondAttribute="centerX" id="gy8-kq-5qS"/>
+                                            <constraint firstItem="we9-xH-j5K" firstAttribute="leading" secondItem="3ol-D8-khj" secondAttribute="leading" constant="32" id="FzC-gH-Bx1"/>
+                                            <constraint firstItem="we9-xH-j5K" firstAttribute="centerX" secondItem="3ol-D8-khj" secondAttribute="centerX" id="pYT-Fh-cJR"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ht-67-411">
@@ -85,7 +80,7 @@
                                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="51" id="Htr-J8-L9i"/>
-                                                    <constraint firstAttribute="width" constant="300" id="uv0-jO-Lbe"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="uv0-jO-Lbe"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Войти">
@@ -115,7 +110,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sza-YX-36e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-838" y="-70"/>
+            <point key="canvasLocation" x="-839.13043478260875" y="-70.3125"/>
         </scene>
     </scenes>
     <resources>
