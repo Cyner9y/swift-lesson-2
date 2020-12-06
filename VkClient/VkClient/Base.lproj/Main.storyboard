@@ -36,15 +36,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ol-D8-khj">
                                         <rect key="frame" x="0.0" y="204.5" width="414" height="204.5"/>
                                         <subviews>
-                                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riB-xT-55f">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="login" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riB-xT-55f">
                                                 <rect key="frame" x="107" y="68" width="200" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" textContentType="username"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-kp-lbf">
+                                            <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kbp-kp-lbf">
                                                 <rect key="frame" x="107" y="128" width="200" height="34"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="7ds-Ge-jlA"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" textContentType="password"/>
                                                 <connections>
@@ -63,10 +64,15 @@
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="kbp-kp-lbf" secondAttribute="bottom" constant="42.5" id="1tI-Rr-eHc"/>
                                             <constraint firstItem="we9-xH-j5K" firstAttribute="top" secondItem="3ol-D8-khj" secondAttribute="topMargin" id="Byq-FJ-4ng"/>
                                             <constraint firstAttribute="height" constant="204.5" id="Ej2-Ns-c0Y"/>
                                             <constraint firstItem="we9-xH-j5K" firstAttribute="leading" secondItem="3ol-D8-khj" secondAttribute="leading" constant="32" id="FzC-gH-Bx1"/>
+                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="leading" secondItem="riB-xT-55f" secondAttribute="leading" id="Jk1-QD-LOC"/>
+                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="trailing" secondItem="riB-xT-55f" secondAttribute="trailing" id="fNc-YC-vla"/>
+                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="top" secondItem="riB-xT-55f" secondAttribute="bottom" constant="26" id="kbp-ys-wbg"/>
                                             <constraint firstItem="we9-xH-j5K" firstAttribute="centerX" secondItem="3ol-D8-khj" secondAttribute="centerX" id="pYT-Fh-cJR"/>
+                                            <constraint firstItem="kbp-kp-lbf" firstAttribute="centerX" secondItem="we9-xH-j5K" secondAttribute="centerX" id="xdA-6f-9VU"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Ht-67-411">
@@ -155,13 +161,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Bq9-mQ-8Tx">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="Bq9-mQ-8Tx">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Bq9-mQ-8Tx" id="ZeV-0J-VWc">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Mwi-2l-Fe7" kind="show" id="reC-rs-K9q"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -170,9 +179,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="1y1-NX-VUh"/>
-                    <connections>
-                        <segue destination="Mwi-2l-Fe7" kind="show" id="bX6-Qo-Cmg"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsr-zW-wCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -236,10 +242,13 @@
                             <outlet property="delegate" destination="Znt-Vb-1eT" id="V1b-ub-orD"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Группы" id="G0t-E9-PwC"/>
-                    <connections>
-                        <segue destination="Rjv-Zc-c9s" kind="show" id="FZu-ID-HCE"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Группы" id="G0t-E9-PwC">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="omh-ec-ch6">
+                            <connections>
+                                <segue destination="Rjv-Zc-c9s" kind="show" id="3WF-aZ-Idv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OQJ-Kr-j5M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -254,10 +263,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Zk4-Z2-wSj">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="aVw-hm-LVl">
                                 <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Zk4-Z2-wSj" id="J1F-56-t7f">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aVw-hm-LVl" id="vzi-5Y-F8w">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
@@ -312,6 +321,7 @@
     </scenes>
     <resources>
         <image name="keyboard" catalog="system" width="128" height="79"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="person.2" catalog="system" width="128" height="81"/>
         <image name="unnamed.png" width="512" height="512"/>
         <systemColor name="systemBackgroundColor">
