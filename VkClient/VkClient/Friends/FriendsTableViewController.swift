@@ -23,8 +23,7 @@ class FriendsTableViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow
             else { return }
         
-        let friend = friends[indexPath.row]
-        controller.avatar = friend.avatar
+        controller.avatar = friends[indexPath.row].avatar
     }
     
     // MARK: - Table view data source
