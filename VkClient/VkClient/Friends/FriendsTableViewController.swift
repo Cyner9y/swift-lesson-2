@@ -39,19 +39,6 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.performSegue(withIdentifier: "goToPhoto", sender: self)
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard
-            segue.identifier == "goToPhoto",
-            let controller = segue.source as? PhotosCollectionController,
-            let indexPath = tableView.indexPathForSelectedRow
-            
-        else { return }
-        
-        controller.avatarImage = UIImage(named: friends[indexPath.row].avatar)
     }
 
     /*

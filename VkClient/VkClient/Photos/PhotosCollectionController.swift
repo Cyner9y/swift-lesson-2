@@ -11,7 +11,16 @@ private let reuseIdentifier = "Cell"
 
 class PhotosCollectionController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     
-    var avatarImage: UIImage? = nil
+    var photo: UIImage?
+    
+    @IBAction func goToPhoto(segue: UIStoryboardSegue) {
+        guard
+            segue.identifier == "goToPhoto",
+            let controller = segue.source as? FriendsTableViewController,
+            let indexPath = controller.tableView.indexPathForSelectedRow
+        else { return }
+        let photo = UIImage(named: controller.friends[indexPath.row].avatar)
+    }
 
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -24,7 +33,7 @@ class PhotosCollectionController: UICollectionViewController, UICollectionViewDe
                 as? PhotosCell
         else { return UICollectionViewCell() }
         
-        cell.photo.image = avatarImage
+        cell.photo.image = photo
     
         return cell
     }

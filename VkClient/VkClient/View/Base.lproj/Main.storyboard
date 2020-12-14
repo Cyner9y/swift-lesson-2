@@ -184,6 +184,7 @@
                                 <connections>
                                     <outlet property="friendAvatar" destination="UuS-bf-Vaw" id="b2h-dC-Nco"/>
                                     <outlet property="friendName" destination="dd6-Zb-rey" id="sjw-DO-js4"/>
+                                    <segue destination="Mwi-2l-Fe7" kind="show" identifier="goToPhoto" id="Wac-bG-pnC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -193,9 +194,6 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="1y1-NX-VUh"/>
-                    <connections>
-                        <segue destination="Mwi-2l-Fe7" kind="show" identifier="goToPhoto" id="GyU-Rw-Gax"/>
-                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsr-zW-wCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
