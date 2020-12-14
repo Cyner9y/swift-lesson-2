@@ -17,6 +17,17 @@ class FriendsTableViewController: UITableViewController {
         User(name: "Кэтрин", surname: "Романова", avatar: "Кэтрин_Романова"),
     ]
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard
+            let controller = segue.destination as? PhotosCollectionController,
+            let indexPath = tableView.indexPathForSelectedRow
+            else { return }
+        
+        let friend = friends[indexPath.row]
+        controller.avatar = friend.avatar
+   
+    }
+    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
