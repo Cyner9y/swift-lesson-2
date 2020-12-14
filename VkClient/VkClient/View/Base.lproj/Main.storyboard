@@ -184,7 +184,7 @@
                                 <connections>
                                     <outlet property="friendAvatar" destination="UuS-bf-Vaw" id="b2h-dC-Nco"/>
                                     <outlet property="friendName" destination="dd6-Zb-rey" id="sjw-DO-js4"/>
-                                    <segue destination="Mwi-2l-Fe7" kind="show" identifier="goToPhoto" id="Wac-bG-pnC"/>
+                                    <segue destination="Mwi-2l-Fe7" kind="show" identifier="" id="Wac-bG-pnC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

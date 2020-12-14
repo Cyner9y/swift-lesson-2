@@ -25,7 +25,6 @@ class FriendsTableViewController: UITableViewController {
         
         let friend = friends[indexPath.row]
         controller.avatar = friend.avatar
-   
     }
     
     // MARK: - Table view data source
