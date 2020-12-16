@@ -8,7 +8,7 @@
 import UIKit
 
 class AllGroupsTableController: UITableViewController {
-    
+   /*
     var allGroups = [
         Group(name: "Amaranthe", avatar: "Amaranthe"),
         Group(name: "NVIDIA", avatar: "NVIDIA"),
@@ -16,6 +16,11 @@ class AllGroupsTableController: UITableViewController {
         Group(name: "Photography", avatar: "Photography"),
         Group(name: "NORDLANDS", avatar: "NORDLANDS")
     ]
+ 
+ */
+    
+    var allGroups = generateGroups(count: 50)
+    
 
     // MARK: - Table view data source
 
@@ -33,7 +38,7 @@ class AllGroupsTableController: UITableViewController {
                 as? GroupCell
         else { return UITableViewCell() }
         cell.groupName.text = allGroups[indexPath.row].name
-        cell.groupAvatar.image = UIImage(named: allGroups[indexPath.row].avatar)
+        cell.groupAvatar.image = UIImage(named: "GroupAvatars/\(allGroups[indexPath.row].avatar)")
         cell.groupAvatar.layer.cornerRadius = cell.groupAvatar.frame.height / 2
         cell.groupAvatar.clipsToBounds = true
 
