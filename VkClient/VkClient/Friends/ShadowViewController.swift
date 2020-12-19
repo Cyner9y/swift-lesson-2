@@ -11,38 +11,32 @@ import UIKit
 @IBDesignable class ShadowViewController: UIImageView {
     
     @IBInspectable var shadowColor: UIColor = .black
-    @IBInspectable var shadowOpacity: Float = 0.5
+    @IBInspectable var shadowOpacity: Float = 1
     @IBInspectable var shadowRadius: CGFloat = 8
     @IBInspectable var shadowOffset: CGSize = .zero
-    
-    var cornerRadius: CGFloat {
-        return frame.width/2
-    }
-    
+        
     override init(frame: CGRect) {
         super.init(frame: frame)
-        sharedInit()
+        addRounder()
+        addShadow()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        sharedInit()
+        addRounder()
+        addShadow()
     }
     
     override func prepareForInterfaceBuilder() {
-        sharedInit()
+        addRounder()
+        addShadow()
+    }
+        
+    func addRounder() {
+        layer.cornerRadius = frame.width / 2
     }
     
-    func sharedInit() {
-        setCornerRadius(value: cornerRadius)
-        setShadow()
-    }
-    
-    func setCornerRadius(value: CGFloat) {
-        layer.cornerRadius = value
-    }
-    
-    func setShadow() {
+    func addShadow() {
         layer.shadowColor = shadowColor.cgColor
         layer.shadowOpacity = shadowOpacity
         layer.shadowRadius = shadowRadius
