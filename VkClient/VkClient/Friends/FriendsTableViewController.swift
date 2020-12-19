@@ -34,8 +34,6 @@ class FriendsTableViewController: UITableViewController {
         
         cell.friendName.text = "\(friends[indexPath.row].firstName) \(friends[indexPath.row].lastName)"
         cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
-        cell.friendAvatar.layer.cornerRadius = cell.friendAvatar.frame.height / 2
-        cell.friendAvatar.clipsToBounds = true
 
         return cell
     }

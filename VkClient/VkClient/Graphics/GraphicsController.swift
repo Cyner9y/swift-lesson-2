@@ -8,6 +8,9 @@
 import UIKit
 
 class GraphicsController: UIViewController {
+    @IBAction func trans(){
+        myTransformation()
+    }
     @IBInspectable var borderWidth: CGFloat = 4.0
     let myNewView = NewView(frame: CGRect(x: 50.0, y: 50.0, width: 100.0, height: 100.0))
     
@@ -20,8 +23,57 @@ class GraphicsController: UIViewController {
 //        myNewView.layer.maskedCorners = CACornerMask(rawValue: 10)
 //        myNewView.layer.cornerRadius = 10.0
 //        myNewView.layer.masksToBounds = true
-        addShadow()
-        addGradient()
+//        addShadow()
+//        addGradient()
+//        myTransformation()
+        
+        let tapGesture = UITapGestureRecognizer()
+        tapGesture.numberOfTapsRequired = 2
+        tapGesture.numberOfTouchesRequired = 2
+        tapGesture.addTarget(self, action: #selector(someMethod))
+        
+        let longGesture = UILongPressGestureRecognizer()
+        longGesture.allowableMovement = 10.0
+        
+        let panGesture = UIPanGestureRecognizer()
+        panGesture.allowedScrollTypesMask = .all
+        
+        let rotationGesture = UIRotationGestureRecognizer()
+        rotationGesture.rotation = .pi / 2
+        
+        let swipeGesture = UISwipeGestureRecognizer()
+        switch swipeGesture.direction {
+        case .left:
+            print("left")
+        default:
+            print("default case")
+        }
+        
+        let pinchGesture = UIPinchGestureRecognizer()
+        pinchGesture.scale = 0.4
+        
+        myNewView.addGestureRecognizer(UIGestureRecognizer())
+    }
+    
+    @objc
+    private func someMethod() {}
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        print(touches.first?.location(in: view))
+    }
+    
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+        print(touches.first?.location(in: view))
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+    }
+
+    override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
     }
     
     private func addShadow() {
@@ -51,6 +103,22 @@ class GraphicsController: UIViewController {
         gradient.endPoint = CGPoint(x: 1.0, y: 1.0)
         myNewView.layer.addSublayer(gradient)
         gradient.frame = myNewView.bounds
+    }
+    
+    private func myTransformation(){
+        let translation = CGAffineTransform(translationX: 15.0, y: 50.0)
+        let scale = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        let rotation = CGAffineTransform(rotationAngle: .pi / 4)
+        
+        let translation3D = CATransform3DMakeTranslation(15.0, 50.0, 30.0)
+        let rotation3D = CATransform3DMakeRotation(.pi / 4, 0, 0, 1)
+        let scale3D = CATransform3DMakeScale(0.5, 0.5, 1)
+        
+        
+        UIView.animate(withDuration: 1) {
+            self.myNewView.layer.transform = translation3D
+        }
+//        myNewView.transform = .identity
     }
 }
 
