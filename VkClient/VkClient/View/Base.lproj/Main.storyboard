@@ -270,7 +270,7 @@
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotosCell" id="f7s-ct-aW3" customClass="PhotosCell" customModule="VkClient" customModuleProvider="target">
                                 <rect key="frame" x="7" y="0.0" width="400" height="400"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="geh-F4-qU7">
+                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="JnQ-se-SGC">
                                     <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -281,10 +281,15 @@
                                                 <constraint firstAttribute="width" secondItem="hqj-Fc-GZU" secondAttribute="height" id="cGN-gl-JnJ"/>
                                             </constraints>
                                         </imageView>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xo-zX-1Xd" customClass="LikeControl" customModule="VkClient" customModuleProvider="target">
+                                            <rect key="frame" x="332" y="358" width="60" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerY" secondItem="geh-F4-qU7" secondAttribute="centerY" id="aKP-UM-XaR"/>
-                                        <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerX" secondItem="geh-F4-qU7" secondAttribute="centerX" id="wd9-xt-72f"/>
+                                        <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerY" secondItem="JnQ-se-SGC" secondAttribute="centerY" id="aKP-UM-XaR"/>
+                                        <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerX" secondItem="JnQ-se-SGC" secondAttribute="centerX" id="wd9-xt-72f"/>
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="400" height="400"/>

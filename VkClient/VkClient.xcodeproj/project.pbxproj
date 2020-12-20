@@ -25,6 +25,8 @@
 		D6C83421258AA9C1005FD4BB /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C83420258AA9C1005FD4BB /* Lorem.swift */; };
 		D6C83464258E7534005FD4BB /* AvatarRounderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C83463258E7534005FD4BB /* AvatarRounderViewController.swift */; };
 		D6C8348B258E9B5C005FD4BB /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C8348A258E9B5C005FD4BB /* ShadowViewController.swift */; };
+		D6F1B4F4258F5E80003B1789 /* LikeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1B4F3258F5E80003B1789 /* LikeControl.swift */; };
+		D6F1B4F7258F6348003B1789 /* CustomExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6F1B4F6258F6348003B1789 /* CustomExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D6C83420258AA9C1005FD4BB /* Lorem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lorem.swift; sourceTree = "<group>"; };
 		D6C83463258E7534005FD4BB /* AvatarRounderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRounderViewController.swift; sourceTree = "<group>"; };
 		D6C8348A258E9B5C005FD4BB /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
+		D6F1B4F3258F5E80003B1789 /* LikeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeControl.swift; sourceTree = "<group>"; };
+		D6F1B4F6258F6348003B1789 /* CustomExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				D6281E04257698F800781510 /* SceneDelegate.swift */,
 				D6281E0B257698FB00781510 /* Assets.xcassets */,
 				D6281E10257698FB00781510 /* Info.plist */,
+				D6F1B4F6258F6348003B1789 /* CustomExtensions.swift */,
 			);
 			path = VkClient;
 			sourceTree = "<group>";
@@ -128,6 +133,7 @@
 			children = (
 				D6772E1525864C6F00B29277 /* PhotosCollectionController.swift */,
 				D6772E182586579200B29277 /* PhotosCell.swift */,
+				D6F1B4F3258F5E80003B1789 /* LikeControl.swift */,
 			);
 			path = Photos;
 			sourceTree = "<group>";
@@ -231,6 +237,7 @@
 			files = (
 				D6281E07257698F800781510 /* ViewController.swift in Sources */,
 				D6C83421258AA9C1005FD4BB /* Lorem.swift in Sources */,
+				D6F1B4F4258F5E80003B1789 /* LikeControl.swift in Sources */,
 				D6281E03257698F800781510 /* AppDelegate.swift in Sources */,
 				D6772E1625864C6F00B29277 /* PhotosCollectionController.swift in Sources */,
 				D6C83464258E7534005FD4BB /* AvatarRounderViewController.swift in Sources */,
@@ -242,6 +249,7 @@
 				D6772E10258622B600B29277 /* GroupsTableController.swift in Sources */,
 				D6772E062585209200B29277 /* FriendCell.swift in Sources */,
 				D6772E192586579200B29277 /* PhotosCell.swift in Sources */,
+				D6F1B4F7258F6348003B1789 /* CustomExtensions.swift in Sources */,
 				D6772E13258622D700B29277 /* GroupCell.swift in Sources */,
 				D6772E1C2586786B00B29277 /* User.swift in Sources */,
 			);
