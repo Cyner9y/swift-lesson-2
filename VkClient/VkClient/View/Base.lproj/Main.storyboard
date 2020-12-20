@@ -281,14 +281,19 @@
                                                 <constraint firstAttribute="width" secondItem="hqj-Fc-GZU" secondAttribute="height" id="cGN-gl-JnJ"/>
                                             </constraints>
                                         </imageView>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Xo-zX-1Xd" customClass="LikeControl" customModule="VkClient" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Xo-zX-1Xd" customClass="LikeControl" customModule="VkClient" customModuleProvider="target">
                                             <rect key="frame" x="332" y="358" width="60" height="30"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="1WZ-ea-8ti"/>
+                                                <constraint firstAttribute="width" constant="60" id="6nG-BU-jb4"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="5Xo-zX-1Xd" firstAttribute="top" secondItem="hqj-Fc-GZU" secondAttribute="bottom" constant="8" symbolic="YES" id="TVG-p7-Ipr"/>
                                         <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerY" secondItem="JnQ-se-SGC" secondAttribute="centerY" id="aKP-UM-XaR"/>
+                                        <constraint firstItem="5Xo-zX-1Xd" firstAttribute="trailing" secondItem="JnQ-se-SGC" secondAttribute="trailingMargin" id="oCI-cx-koY"/>
                                         <constraint firstItem="hqj-Fc-GZU" firstAttribute="centerX" secondItem="JnQ-se-SGC" secondAttribute="centerX" id="wd9-xt-72f"/>
                                     </constraints>
                                 </collectionViewCellContentView>
