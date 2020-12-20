@@ -401,7 +401,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wFw-5H-9YP">
-                                            <rect key="frame" x="20" y="14" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="10" width="50" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="3TN-J4-OiC"/>
                                                 <constraint firstAttribute="width" constant="50" id="onK-UC-a09"/>
@@ -411,10 +411,10 @@
                                     <constraints>
                                         <constraint firstItem="9Cb-dv-bQy" firstAttribute="leading" secondItem="wFw-5H-9YP" secondAttribute="trailing" constant="50" id="4RA-Un-vys"/>
                                         <constraint firstItem="9Cb-dv-bQy" firstAttribute="centerX" secondItem="vzi-5Y-F8w" secondAttribute="centerX" constant="37" id="EB0-gh-iFv"/>
-                                        <constraint firstAttribute="bottom" secondItem="wFw-5H-9YP" secondAttribute="bottom" constant="6" id="Oku-lr-Ipf"/>
+                                        <constraint firstAttribute="bottom" secondItem="wFw-5H-9YP" secondAttribute="bottom" constant="10" id="Oku-lr-Ipf"/>
                                         <constraint firstItem="wFw-5H-9YP" firstAttribute="leading" secondItem="vzi-5Y-F8w" secondAttribute="leading" constant="20" id="P5k-EX-wpi"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9Cb-dv-bQy" secondAttribute="trailing" id="ZIW-Az-wGv"/>
-                                        <constraint firstItem="wFw-5H-9YP" firstAttribute="top" secondItem="vzi-5Y-F8w" secondAttribute="top" constant="14" id="gWu-kz-lgo"/>
+                                        <constraint firstItem="wFw-5H-9YP" firstAttribute="top" secondItem="vzi-5Y-F8w" secondAttribute="top" constant="10" id="gWu-kz-lgo"/>
                                         <constraint firstItem="9Cb-dv-bQy" firstAttribute="centerY" secondItem="vzi-5Y-F8w" secondAttribute="centerY" id="rkb-pz-Ar6"/>
                                     </constraints>
                                 </tableViewCellContentView>
