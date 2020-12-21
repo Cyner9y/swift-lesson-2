@@ -9,13 +9,7 @@ import UIKit
 
 class FriendsTableViewController: UITableViewController {
     
-    var friends = [
-        User(name: "Таня", surname: "Беркут", avatar: "Таня_Беркут"),
-        User(name: "Игорь", surname: "Зарубин", avatar: "Игорь_Зарубин"),
-        User(name: "Мария", surname: "Каневская", avatar: "Мария_Каневская"),
-        User(name: "Илья", surname: "Чёрный", avatar: "Илья_Чёрный"),
-        User(name: "Кэтрин", surname: "Романова", avatar: "Кэтрин_Романова"),
-    ]
+    var friends = generateUsers(count: 100)
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
@@ -38,10 +32,8 @@ class FriendsTableViewController: UITableViewController {
                 as? FriendCell
         else { return UITableViewCell() }
         
-        cell.friendName.text = "\(friends[indexPath.row].name) \(friends[indexPath.row].surname)"
-        cell.friendAvatar.image = UIImage(named: friends[indexPath.row].avatar)
-        cell.friendAvatar.layer.cornerRadius = cell.friendAvatar.frame.height / 2
-        cell.friendAvatar.clipsToBounds = true
+        cell.friendName.text = "\(friends[indexPath.row].firstName) \(friends[indexPath.row].lastName)"
+        cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
 
         return cell
     }

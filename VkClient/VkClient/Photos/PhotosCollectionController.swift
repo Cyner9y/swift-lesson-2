@@ -24,7 +24,7 @@ class PhotosCollectionController: UICollectionViewController, UICollectionViewDe
                 as? PhotosCell
         else { return UICollectionViewCell() }
         
-        cell.photo.image = UIImage(named: avatar)
+        cell.photo.image = UIImage(named: "Avatars/\(avatar)")
     
         return cell
     }

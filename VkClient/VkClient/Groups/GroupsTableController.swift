@@ -42,7 +42,7 @@ class GroupsTableController: UITableViewController {
                 as? GroupCell
         else { return UITableViewCell() }
         cell.groupName.text = groups[indexPath.row].name
-        cell.groupAvatar.image = UIImage(named: groups[indexPath.row].avatar)
+        cell.groupAvatar.image = UIImage(named: "GroupAvatars/\(groups[indexPath.row].avatar)")
         cell.groupAvatar.layer.cornerRadius = cell.groupAvatar.frame.height / 2
         cell.groupAvatar.clipsToBounds = true
         
