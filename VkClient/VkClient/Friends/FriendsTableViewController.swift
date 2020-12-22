@@ -8,16 +8,13 @@
 import UIKit
 
 class FriendsTableViewController: UITableViewController {
-    
-    @IBOutlet weak var headerView: FriendsTableViewHeader!
-    
+        
     var myFriends = generateUsers(count: 100)
     var firstLetters = [Character]()
     var sortedFriends = [Character: [User]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableHeaderView = headerView
         tableView.register(FriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "FriendsSectionHeader")
         
         (firstLetters, sortedFriends) = sortFriends(myFriends)
@@ -71,7 +68,8 @@ class FriendsTableViewController: UITableViewController {
             let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FriendsSectionHeader")
                 as? FriendsSectionHeader
         else { return nil }
-        sectionHeader.contentView.backgroundColor = .clear
+        sectionHeader.backgroundView?.backgroundColor = tableView.backgroundColor
+        sectionHeader.backgroundView?.alpha = 0.5
         return sectionHeader
     }
     
