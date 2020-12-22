@@ -20,7 +20,11 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "FriendsSectionHeader")
-        
+        filteredFriendsArray = myFriends
+        updateFriendsIndex(friends: filteredFriendsArray)
+        updateFriendsNamesDictionary(friends: filteredFriendsArray)
+        tableView.keyboardDismissMode = .onDrag
+
         (firstLetters, sortedFriends) = sortFriends(myFriends)
     }
     
