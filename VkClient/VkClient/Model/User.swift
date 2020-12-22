@@ -12,6 +12,10 @@ struct User {
     let lastName: String
     let avatar: String
     let photos: [String]
+    
+    var fullName: String {
+        return "\(firstName) \(lastName)"
+    }
 }
 
 func generateUser() -> User{

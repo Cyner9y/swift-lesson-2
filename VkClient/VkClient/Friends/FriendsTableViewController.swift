@@ -7,11 +7,15 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
-        
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
+    
     var myFriends = generateUsers(count: 100)
     var firstLetters = [Character]()
     var sortedFriends = [Character: [User]]()
+    var searchActive = false
+    var filteredFriendsArray: [User] = []
+    
+    @IBOutlet weak var friendsSearchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,12 +42,12 @@ class FriendsTableViewController: UITableViewController {
     override func numberOfSections(in tableView: UITableView) -> Int {
         firstLetters.count
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let charFriends = firstLetters[section]
         return sortedFriends[charFriends]?.count ?? 0
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
@@ -52,10 +56,10 @@ class FriendsTableViewController: UITableViewController {
         
         let firstLetter = firstLetters[indexPath.section]
         if let friends = sortedFriends[firstLetter] {
-            cell.friendName.text = "\(friends[indexPath.row].firstName) \(friends[indexPath.row].lastName)"
+            cell.friendName.text = friends[indexPath.row].fullName
             cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
         }
-
+        
         return cell
     }
     
@@ -75,5 +79,57 @@ class FriendsTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         String(firstLetters[section])
+    }
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        guard !searchActive else { return nil }
+        let friendsIndexToStringArray = firstLetters.map { String($0) }
+        return friendsIndexToStringArray
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = tableView.backgroundColor
+            header.backgroundView?.alpha = 0.5
+        }
+    }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        hideKeyboard()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredFriendsArray = myFriends.filter({ (friend) -> Bool in
+            FirstLetterSearch.isMatched(searchBase: friend.fullName, searchString: searchText)
+        })
+        updateFriendsIndex(friends: filteredFriendsArray)
+        updateFriendsNamesDictionary(friends: filteredFriendsArray)
+        print(filteredFriendsArray)
+        
+        
+        if (searchText.count == 0) {
+            updateFriendsIndex(friends: myFriends)
+            updateFriendsNamesDictionary(friends: myFriends)
+            searchActive = false
+            hideKeyboard()
+        }
+        tableView.reloadData()
+    }
+    
+    @objc func hideKeyboard() {
+        searchActive = false
+        friendsSearchBar.endEditing(true)
+    }
+    
+    func updateFriendsNamesDictionary(friends: [User]) {
+        sortedFriends = SectionIndexManager.getFriendIndexDictionary(array: friends)
+    }
+    
+    func updateFriendsIndex(friends: [User]) {
+        firstLetters = SectionIndexManager.getOrderedIndexArray(array: friends)
     }
 }

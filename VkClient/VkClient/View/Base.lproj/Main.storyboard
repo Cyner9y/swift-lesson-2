@@ -160,9 +160,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="4Sd-rk-PnH">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="CSm-0H-HmR">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="CSm-0H-HmR" secondAttribute="bottom" id="6yp-kK-o5h"/>
+                                <constraint firstItem="CSm-0H-HmR" firstAttribute="top" secondItem="4Sd-rk-PnH" secondAttribute="top" id="R5p-ed-iES"/>
+                                <constraint firstItem="CSm-0H-HmR" firstAttribute="leading" secondItem="4Sd-rk-PnH" secondAttribute="leading" id="pV2-iq-H4f"/>
+                                <constraint firstAttribute="trailing" secondItem="CSm-0H-HmR" secondAttribute="trailing" id="wTX-Lg-ntM"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" rowHeight="70.5" id="4fg-XL-2i5" customClass="FriendCell" customModule="VkClient" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="70.5"/>
+                                <rect key="frame" x="0.0" y="72" width="414" height="70.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" tableViewCell="4fg-XL-2i5" id="tgX-Rg-bvG">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70.5"/>
@@ -247,6 +264,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Друзья" id="1y1-NX-VUh"/>
+                    <connections>
+                        <outlet property="friendsSearchBar" destination="CSm-0H-HmR" id="Xnx-sx-fX8"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dsr-zW-wCo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
