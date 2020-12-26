@@ -7,84 +7,133 @@
 
 import UIKit
 
-class FriendsTableViewController: UITableViewController {
+class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     
-    var friends = generateUsers(count: 100)
+    var myFriends = generateUsers(count: 100)
+    var firstLetters = [Character]()
+    var sortedFriends = [Character: [User]]()
+    var searchActive = false
+    var filteredFriendsArray: [User] = []
+    
+    @IBOutlet weak var friendsSearchBar: UISearchBar!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.register(FriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "FriendsSectionHeader")        
+        filteredFriendsArray = myFriends
+        updateFriendsIndex(friends: filteredFriendsArray)
+        updateFriendsNamesDictionary(friends: filteredFriendsArray)
+        tableView.keyboardDismissMode = .onDrag
+
+        (firstLetters, sortedFriends) = sortFriends(myFriends)
+    }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard
-            let controller = segue.destination as? PhotosCollectionController,
+            let destination = segue.destination as? PhotosCollectionController,
             let indexPath = tableView.indexPathForSelectedRow
-            else { return }
+        else { return }
         
-        controller.avatar = friends[indexPath.row].avatar
+        let char = firstLetters[indexPath.section]
+        
+        if let selectedFriend = sortedFriends[char]?[indexPath.row] {
+            destination.avatar = selectedFriend.avatar
+        }
     }
     
     // MARK: - Table view data source
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        friends.count
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        firstLetters.count
     }
-
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let charFriends = firstLetters[section]
+        return sortedFriends[charFriends]?.count ?? 0
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard
             let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
                 as? FriendCell
         else { return UITableViewCell() }
         
-        cell.friendName.text = "\(friends[indexPath.row].firstName) \(friends[indexPath.row].lastName)"
-        cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
-
+        let firstLetter = firstLetters[indexPath.section]
+        if let friends = sortedFriends[firstLetter] {
+            cell.friendName.text = friends[indexPath.row].fullName
+            cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
+        }
+        
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard
+            let sectionHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "FriendsSectionHeader")
+                as? FriendsSectionHeader
+        else { return nil }
+        sectionHeader.backgroundView?.backgroundColor = tableView.backgroundColor
+        sectionHeader.backgroundView?.alpha = 0.5
+        return sectionHeader
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        String(firstLetters[section])
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
+    
+    override func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        guard !searchActive else { return nil }
+        let friendsIndexToStringArray = firstLetters.map { String($0) }
+        return friendsIndexToStringArray
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int){
+        if let header: UITableViewHeaderFooterView = view as? UITableViewHeaderFooterView {
+            header.backgroundView?.backgroundColor = tableView.backgroundColor
+            header.backgroundView?.alpha = 0.5
+        }
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchActive = true
     }
-    */
-
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        hideKeyboard()
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        filteredFriendsArray = myFriends.filter({ (friend) -> Bool in
+            FirstLetterSearch.isMatched(searchBase: friend.fullName, searchString: searchText)
+        })
+        updateFriendsIndex(friends: filteredFriendsArray)
+        updateFriendsNamesDictionary(friends: filteredFriendsArray)
+        print(filteredFriendsArray)
+        
+        
+        if (searchText.count == 0) {
+            updateFriendsIndex(friends: myFriends)
+            updateFriendsNamesDictionary(friends: myFriends)
+            searchActive = false
+            hideKeyboard()
+        }
+        tableView.reloadData()
+    }
+    
+    @objc func hideKeyboard() {
+        searchActive = false
+        friendsSearchBar.endEditing(true)
+    }
+    
+    func updateFriendsNamesDictionary(friends: [User]) {
+        sortedFriends = SectionIndexManager.getFriendIndexDictionary(array: friends)
+    }
+    
+    func updateFriendsIndex(friends: [User]) {
+        firstLetters = SectionIndexManager.getOrderedIndexArray(array: friends)
+    }
 }
