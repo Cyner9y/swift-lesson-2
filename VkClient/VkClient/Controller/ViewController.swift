@@ -12,9 +12,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginInput: UITextField!
     @IBOutlet weak var passwordInput: UITextField!
     
+    var timerSeconds = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        view.alpha = 0.5
+        let progressStatusIndicator = ProgressStatusIndicator(frame: CGRect(x: 0, y:0, width: view.bounds.width, height: view.bounds.height))
+        view.addSubview(progressStatusIndicator)
+        
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
+            self.timerSeconds -= 1
+            if self.timerSeconds == 0 {
+                timer.invalidate()
+                progressStatusIndicator.removeFromSuperview()
+                self.view.alpha = 1
+            }
+        }
     }
     
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
@@ -25,6 +42,8 @@ class ViewController: UIViewController {
         }
         return checkResult
     }
+    
+    
     
     func checkUserData() -> Bool{
         guard let login = loginInput.text, let password = passwordInput.text else { return false }

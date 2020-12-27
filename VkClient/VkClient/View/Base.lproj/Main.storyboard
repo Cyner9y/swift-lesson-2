@@ -214,6 +214,7 @@
                                         </view>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-fZ-ZYQ" customClass="AvatarRounderViewController" customModule="VkClient" customModuleProvider="target">
                                             <rect key="frame" x="20" y="10" width="50" height="50.5"/>
+                                            <gestureRecognizers/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="RYT-37-6Q2"/>
                                                 <constraint firstAttribute="width" constant="50" id="g8c-o1-q3t"/>

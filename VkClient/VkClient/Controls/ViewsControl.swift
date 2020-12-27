@@ -31,10 +31,6 @@ import UIKit
         viewsLabel.textColor = UIColor.darkGray
         setupConstraints()
         
-        //MARK: to debug ViewsControl position uncomment two lines below
-        //    viewsIconView.layer.borderWidth = 1.0
-        //    viewsLabel.layer.borderWidth = 1.0
-        
         stackView = UIStackView(arrangedSubviews: [viewsIconView, viewsLabel])
         
         self.addSubview(stackView)

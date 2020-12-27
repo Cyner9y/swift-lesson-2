@@ -83,6 +83,19 @@ import UIKit
     
     @objc func onTap(_ sender: HeartButton) {
         like()
+        animateLikeButton()
+    }
+    
+    func animateLikeButton() {
+        let animation = CASpringAnimation(keyPath: "transform.scale")
+        animation.fromValue = 0
+        animation.toValue = 1
+        animation.stiffness = 200
+        animation.mass = 1
+        animation.duration = 1
+        animation.beginTime = CACurrentMediaTime()
+        animation.fillMode = CAMediaTimingFillMode.backwards
+        self.likeButton.layer.add(animation, forKey: nil)
     }
 }
 

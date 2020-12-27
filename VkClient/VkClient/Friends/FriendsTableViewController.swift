@@ -16,7 +16,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     var filteredFriendsArray: [User] = []
     
     @IBOutlet weak var friendsSearchBar: UISearchBar!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "FriendsSectionHeader")        

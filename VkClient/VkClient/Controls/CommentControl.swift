@@ -32,10 +32,6 @@ import UIKit
         commentsLabel.textColor = UIColor.darkGray
         setupConstraints()
         
-        //MARK: to debug CommentControl position uncomment two lines below
-        //    commentIconView.layer.borderWidth = 1.0
-        //    commentsLabel.layer.borderWidth = 1.0
-        
         stackView = UIStackView(arrangedSubviews: [commentIconView, commentsLabel])
         
         self.addSubview(stackView)
