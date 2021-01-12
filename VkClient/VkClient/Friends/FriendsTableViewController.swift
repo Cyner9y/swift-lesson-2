@@ -16,7 +16,7 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
     var filteredFriendsArray: [User] = []
     
     @IBOutlet weak var friendsSearchBar: UISearchBar!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(FriendsSectionHeader.self, forHeaderFooterViewReuseIdentifier: "FriendsSectionHeader")        
@@ -61,7 +61,11 @@ class FriendsTableViewController: UITableViewController, UISearchBarDelegate {
         let firstLetter = firstLetters[indexPath.section]
         if let friends = sortedFriends[firstLetter] {
             cell.friendName.text = friends[indexPath.row].fullName
-            cell.friendAvatar.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
+            cell.friendImage.setImage(UIImage(named: "Avatars/\(friends[indexPath.row].avatar)"), for: .normal)
+            cell.friendImage.imageView?.image = UIImage(named: "Avatars/\(friends[indexPath.row].avatar)")
+            cell.friendImage.layer.masksToBounds = false
+            cell.friendImage.layer.cornerRadius = cell.friendImage.frame.width/2
+            cell.friendImage.clipsToBounds = true
         }
         
         return cell

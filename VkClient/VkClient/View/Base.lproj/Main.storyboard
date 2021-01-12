@@ -190,10 +190,24 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7TS-Fi-hg9" userLabel="Shadow" customClass="ShadowViewController" customModule="VkClient" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="10" width="50" height="50"/>
+                                            <rect key="frame" x="20" y="10" width="50" height="50.5"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VnE-6z-m5Y">
+                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="Y6e-b1-VmK"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button"/>
+                                                    <connections>
+                                                        <action selector="friendAvatar:" destination="4fg-XL-2i5" eventType="touchUpInside" id="kF3-vc-8Rz"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
+                                                <constraint firstItem="VnE-6z-m5Y" firstAttribute="centerY" secondItem="7TS-Fi-hg9" secondAttribute="centerY" id="0ih-V5-k0x"/>
                                                 <constraint firstAttribute="width" constant="50" id="EIm-1D-U3V"/>
+                                                <constraint firstItem="VnE-6z-m5Y" firstAttribute="top" secondItem="7TS-Fi-hg9" secondAttribute="top" id="I5d-7Q-kIB"/>
                                                 <constraint firstAttribute="height" constant="50" id="uxC-gn-rm3"/>
                                             </constraints>
                                             <userDefinedRuntimeAttributes>
@@ -212,24 +226,6 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                         </view>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k0i-fZ-ZYQ" customClass="AvatarRounderViewController" customModule="VkClient" customModuleProvider="target">
-                                            <rect key="frame" x="20" y="10" width="50" height="50.5"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="50" id="RYT-37-6Q2"/>
-                                                <constraint firstAttribute="width" constant="50" id="g8c-o1-q3t"/>
-                                            </constraints>
-                                            <userDefinedRuntimeAttributes>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                    <real key="value" value="8"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                                    <real key="value" value="8"/>
-                                                </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                                    <size key="value" width="11" height="10"/>
-                                                </userDefinedRuntimeAttribute>
-                                            </userDefinedRuntimeAttributes>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vzp-LG-Cxf">
                                             <rect key="frame" x="120" y="10" width="93" height="50.5"/>
                                             <constraints>
@@ -241,23 +237,22 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="top" secondItem="k0i-fZ-ZYQ" secondAttribute="top" id="02V-bq-HIG"/>
-                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="leading" secondItem="k0i-fZ-ZYQ" secondAttribute="trailing" constant="50" id="10D-Xo-QEU"/>
-                                        <constraint firstAttribute="bottom" secondItem="k0i-fZ-ZYQ" secondAttribute="bottom" constant="10" id="6mV-Vm-9aS"/>
                                         <constraint firstItem="vzp-LG-Cxf" firstAttribute="leading" secondItem="7TS-Fi-hg9" secondAttribute="trailing" constant="50" id="EXE-K2-AVB"/>
-                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="k0i-fZ-ZYQ" secondAttribute="trailing" constant="8" symbolic="YES" id="GC1-AL-ovQ"/>
+                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="VnE-6z-m5Y" secondAttribute="trailing" constant="50" id="F8B-aH-4oJ"/>
+                                        <constraint firstItem="7TS-Fi-hg9" firstAttribute="centerY" secondItem="tgX-Rg-bvG" secondAttribute="centerY" id="Gnj-yg-xaw"/>
+                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="top" secondItem="7TS-Fi-hg9" secondAttribute="top" id="Hoq-xM-Eyf"/>
+                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="leading" secondItem="tgX-Rg-bvG" secondAttribute="leading" constant="120" id="Mi7-jy-bxY"/>
                                         <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="vzp-LG-Cxf" secondAttribute="trailing" constant="201" id="abU-eh-arG"/>
-                                        <constraint firstItem="7TS-Fi-hg9" firstAttribute="top" secondItem="tgX-Rg-bvG" secondAttribute="top" constant="10" id="gJd-zJ-74d"/>
-                                        <constraint firstItem="k0i-fZ-ZYQ" firstAttribute="centerY" secondItem="tgX-Rg-bvG" secondAttribute="centerY" id="iG5-Ig-L7M"/>
-                                        <constraint firstItem="k0i-fZ-ZYQ" firstAttribute="leading" secondItem="tgX-Rg-bvG" secondAttribute="leading" constant="20" id="ly5-HB-eWn"/>
-                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="bottom" secondItem="k0i-fZ-ZYQ" secondAttribute="bottom" id="pCP-kc-xNd"/>
-                                        <constraint firstItem="k0i-fZ-ZYQ" firstAttribute="top" secondItem="tgX-Rg-bvG" secondAttribute="top" constant="10" id="uAN-gX-MQV"/>
-                                        <constraint firstAttribute="bottom" secondItem="7TS-Fi-hg9" secondAttribute="bottom" constant="10.5" id="znY-WF-9DM"/>
+                                        <constraint firstItem="vzp-LG-Cxf" firstAttribute="centerY" secondItem="7TS-Fi-hg9" secondAttribute="centerY" id="fol-Ls-PDF"/>
+                                        <constraint firstAttribute="bottom" secondItem="7TS-Fi-hg9" secondAttribute="bottom" constant="10" id="g31-xH-EyH"/>
+                                        <constraint firstItem="VnE-6z-m5Y" firstAttribute="leading" secondItem="tgX-Rg-bvG" secondAttribute="leading" constant="20" id="ghx-lc-DgF"/>
+                                        <constraint firstItem="7TS-Fi-hg9" firstAttribute="top" secondItem="tgX-Rg-bvG" secondAttribute="top" constant="10" id="wec-c3-cqI"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="friendAvatar" destination="k0i-fZ-ZYQ" id="29i-Ov-iyd"/>
+                                    <outlet property="friendImage" destination="VnE-6z-m5Y" id="bij-lc-Ywz"/>
                                     <outlet property="friendName" destination="vzp-LG-Cxf" id="kBi-xs-WFX"/>
+                                    <outlet property="shadow" destination="7TS-Fi-hg9" id="rrb-vR-HZg"/>
                                     <segue destination="Mwi-2l-Fe7" kind="show" id="hlz-8W-PrL"/>
                                 </connections>
                             </tableViewCell>

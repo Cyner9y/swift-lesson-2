@@ -33,10 +33,6 @@ import UIKit
         sharesLabel.textColor = UIColor.darkGray
         setupConstraints()
         
-        //MARK: to debug sharesControl position uncomment two lines below
-        //    shareIconView.layer.borderWidth = 1.0
-        //    sharesLabel.layer.borderWidth = 1.0
-        
         stackView = UIStackView(arrangedSubviews: [shareIconView, sharesLabel])
         
         self.addSubview(stackView)

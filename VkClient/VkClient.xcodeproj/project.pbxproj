@@ -22,6 +22,7 @@
 		D6772E192586579200B29277 /* PhotosCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6772E182586579200B29277 /* PhotosCell.swift */; };
 		D6772E1C2586786B00B29277 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6772E1B2586786B00B29277 /* User.swift */; };
 		D6772E1F2586788500B29277 /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6772E1E2586788500B29277 /* Group.swift */; };
+		D6B616802598B80700EF8E3F /* ProgressStatusIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B6167F2598B80700EF8E3F /* ProgressStatusIndicator.swift */; };
 		D6C83421258AA9C1005FD4BB /* Lorem.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C83420258AA9C1005FD4BB /* Lorem.swift */; };
 		D6C83464258E7534005FD4BB /* AvatarRounderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C83463258E7534005FD4BB /* AvatarRounderViewController.swift */; };
 		D6C8348B258E9B5C005FD4BB /* ShadowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C8348A258E9B5C005FD4BB /* ShadowViewController.swift */; };
@@ -58,6 +59,7 @@
 		D6772E182586579200B29277 /* PhotosCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCell.swift; sourceTree = "<group>"; };
 		D6772E1B2586786B00B29277 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D6772E1E2586788500B29277 /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		D6B6167F2598B80700EF8E3F /* ProgressStatusIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressStatusIndicator.swift; sourceTree = "<group>"; };
 		D6C83420258AA9C1005FD4BB /* Lorem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lorem.swift; sourceTree = "<group>"; };
 		D6C83463258E7534005FD4BB /* AvatarRounderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarRounderViewController.swift; sourceTree = "<group>"; };
 		D6C8348A258E9B5C005FD4BB /* ShadowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				D6281E06257698F800781510 /* ViewController.swift */,
+				D6B6167F2598B80700EF8E3F /* ProgressStatusIndicator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				D6281E03257698F800781510 /* AppDelegate.swift in Sources */,
 				D6F1B518259261FC003B1789 /* SectionIndexManager.swift in Sources */,
 				D6F1B51525925EF5003B1789 /* FirstLetterSearch.swift in Sources */,
+				D6B616802598B80700EF8E3F /* ProgressStatusIndicator.swift in Sources */,
 				D6772E1625864C6F00B29277 /* PhotosCollectionController.swift in Sources */,
 				D6C83464258E7534005FD4BB /* AvatarRounderViewController.swift in Sources */,
 				D6F1B5312594B9C6003B1789 /* ShareControl.swift in Sources */,
